@@ -1,6 +1,6 @@
 # Valentinegb Personal
 
-A tap for miscellaneous formulas and casks which I need that either aren't allowed in `homebrew/core` or `homebrew/cask` or are part of other taps which are unmaintained.
+Tap for miscellaneous formulas and casks which I need that either aren't allowed in official taps or are part of unmaintained taps
 
 ## How do I install these formulae?
 
