@@ -1,4 +1,4 @@
-# Valentinegb Personal
+# valentinegb Personal
 
 Tap for miscellaneous formulas and casks which I need that either aren't allowed in official taps or are part of unmaintained taps
 
