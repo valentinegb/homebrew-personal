@@ -2,9 +2,9 @@ cask "wpilib" do
   arch arm: "Arm64", intel: "Intel"
   url_arch = on_arch_conditional arm: "Arm", intel: ""
 
-  version "2024.1.1"
-  sha256 arm:   "69ee98b0456dae36cce9fe836024f9fcf5e7424a7bf75979b6a7a608ce74c78f",
-         intel: "fb68cf2f5f8d6a5d7160e9e458f84dec31c29b5a8362d5128e4546589803de86"
+  version "2024.2.1"
+  sha256 arm:   "8ac5465408ba1d7ade6b17100093eb1d3717e7703b3bba381cb17e0df8b14c58",
+         intel: "ac2537bcafb91a78ed3488d113e8119d1b0c4da32af6d78866081422df7c41f3"
 
   url "https://packages.wpilib.workers.dev/installer/v#{version}/macOS#{url_arch}/WPILib_macOS-#{arch}-#{version}.dmg",
       verified: "packages.wpilib.workers.dev/"
