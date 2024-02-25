@@ -1,9 +1,8 @@
 class Aseprite < Formula
   desc "Animated sprite editor & pixel art tool"
   homepage "https://www.aseprite.org"
-  url "https://github.com/aseprite/aseprite.git",
-    tag:      "v1.3.4",
-    revision: "0134c7492687a41dd85882ff8de66c805fff5a19"
+  url "https://github.com/aseprite/aseprite/releases/download/v1.3.4/Aseprite-v1.3.4-Source.zip"
+  sha256 "93e87272cc5159ff695650d05d3c52a37074a97a630769910a84b71e914456a2"
   license :cannot_represent
 
   depends_on "cmake" => :build
@@ -25,8 +24,6 @@ class Aseprite < Formula
 
     cd "build" do
       system "cmake",
-        *std_cmake_args,
-        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
         "-DCMAKE_OSX_ARCHITECTURES=arm64",
         "-DCMAKE_OSX_DEPLOYMENT_TARGET=11.0",
         "-DCMAKE_OSX_SYSROOT=" \
@@ -37,14 +34,15 @@ class Aseprite < Formula
         "-DSKIA_LIBRARY=../skia/out/Release-arm64/libskia.a",
         "-DPNG_ARM_NEON:STRING=on",
         "-G Ninja",
-        ".."
+        "..",
+        *std_cmake_args
       system "ninja", "aseprite"
       system "ninja", "install"
     end
   end
 
   test do
-    assert_equal "Aseprite 1.x-dev", shell_output("#{bin}/aseprite --version").strip
+    assert_equal "Aseprite 1.3.4-dev", shell_output("#{bin}/aseprite --version").strip
   end
 end
 __END__
