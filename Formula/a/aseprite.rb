@@ -29,7 +29,8 @@ class Aseprite < Formula
         "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
         "-DCMAKE_OSX_ARCHITECTURES=arm64",
         "-DCMAKE_OSX_DEPLOYMENT_TARGET=11.0",
-        "-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
+        "-DCMAKE_OSX_SYSROOT=" \
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
         "-DLAF_BACKEND=skia",
         "-DSKIA_DIR=../skia",
         "-DSKIA_LIBRARY_DIR=../skia/out/Release-arm64",
@@ -52,12 +53,12 @@ index 3a3126c6c..7a2452fa4 100644
 --- a/src/app/resource_finder.cpp
 +++ b/src/app/resource_finder.cpp
 @@ -102,6 +102,9 @@ void ResourceFinder::includeDataDir(const char* filename)
-   std::snprintf(buf, sizeof(buf), ../Resources/data/%s, filename);
-   includeBinDir(buf);  // /../Resources/data/filename (inside a bundle)
+   std::snprintf(buf, sizeof(buf), "../Resources/data/%s", filename);
+   includeBinDir(buf);  // $BINDIR/../Resources/data/filename (inside a bundle)
 
 +  std::snprintf(buf, sizeof(buf), "../share/aseprite/data/%s", filename);
-+  includeBinDir(buf);  // /../share/aseprite/data/filename (installed in /usr/ or /usr/local/)
++  includeBinDir(buf);  // $BINDIR/../share/aseprite/data/filename (installed in /usr/ or /usr/local/)
 +
  #else
 
-   // /Users/valentinebriese/.config/aseprite/filename
+   // $HOME/.config/aseprite/filename
