@@ -1,6 +1,6 @@
 cask "aseprite" do
-  version "1.3.4"
-  sha256 "a7b46896b520ce7baff702fb44599cf785985621f1902e11f3369f9413377e92"
+  version "1.3.5"
+  sha256 "340c8464c2007ce3f80682e15dfafa4180b641d53c14201b929906b7b0284d87"
 
   url "https://www.aseprite.org/downloads/trial/Aseprite-v#{version}-trial-macOS.dmg"
   name "Aseprite"
