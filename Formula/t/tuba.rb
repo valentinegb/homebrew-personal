@@ -5,6 +5,8 @@ class Tuba < Formula
   sha256 "ffe81e9c1c45d1165327c61bf8fe7907695e94122bf3b72fc060f87f3611bdcf"
   license "GPL-3.0-only"
 
+  head "https://github.com/GeopJr/Tuba.git", branch: "main"
+
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -21,7 +23,7 @@ class Tuba < Formula
 
   def install
     system "meson", "setup", "build", "-Ddistro=true", *std_meson_args
-    system "meson", "configure", "build", "-Ddevel=false"
+    system "meson", "configure", "build", "-Ddevel=#{build.head?}"
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
