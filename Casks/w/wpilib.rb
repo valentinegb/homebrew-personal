@@ -14,7 +14,9 @@ cask "wpilib" do
 
   livecheck do
     url "https://github.com/wpilibsuite/allwpilib.git"
-    strategy :git
+    strategy :git do |tags|
+      tags.filter_map { |tag| tag[/^v(\d*.\d*.\d*)$/i, 1] }
+    end
   end
 
   depends_on macos: ">= :el_capitan"
