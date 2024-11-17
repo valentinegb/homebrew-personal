@@ -1,8 +1,8 @@
 class Aseprite < Formula
   desc "Animated sprite editor & pixel art tool"
   homepage "https://www.aseprite.org"
-  url "https://github.com/aseprite/aseprite/releases/download/v1.3.5/Aseprite-v1.3.5-Source.zip"
-  sha256 "6acf1b7f5019733cd8a54d8e0504e78b2f74cdb2073f82230e543cfd990f6984"
+  url "https://github.com/aseprite/aseprite/releases/download/v1.3.9.1/Aseprite-v1.3.9.1-Source.zip"
+  sha256 "c4abfc90abcabd2971704d0b57abcf183e48c8932c11998c59122a491e2c686c"
   license :cannot_represent
 
   depends_on "cmake" => :build
@@ -42,7 +42,7 @@ class Aseprite < Formula
   end
 
   test do
-    assert_equal "Aseprite 1.3.5-dev", shell_output("#{bin}/aseprite --version").strip
+    assert_equal "Aseprite 1.3.9.1-dev", shell_output("#{bin}/aseprite --version").strip
   end
 end
 __END__
