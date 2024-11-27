@@ -11,4 +11,8 @@ cask "fusion-helper" do
   depends_on cask: "steam"
 
   app "FusionHelper_Mac.app"
+
+  postflight do
+    set_permissions "#{staged_path}/FusionHelper_Mac.app/Contents/MacOS/Fusion Helper", "0755"
+  end
 end
