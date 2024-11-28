@@ -4,7 +4,7 @@ cask "fusion-helper" do
 
   url "https://github.com/Lakatrazz/Fusion-Helper/releases/download/v#{version}/FusionHelper_Mac.app.zip"
   name "Fusion Helper"
-  desc "Proxy application to allow the use of BONELAB Fusion on the Meta Quests"
+  desc "Proxy application to allow the use of BONELAB Fusion on Meta Quests"
   homepage "https://github.com/Lakatrazz/Fusion-Helper"
 
   depends_on macos: ">= :big_sur"
