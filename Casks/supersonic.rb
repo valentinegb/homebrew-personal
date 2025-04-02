@@ -1,5 +1,6 @@
 cask "supersonic" do
   arch arm: "arm64", intel: "x64"
+
   version "0.14.0"
   sha256 arm:   "f74d0f615b46157d07e9339d8790c233559066192ac9e43fdb332fd16124e9ab",
          intel: "3cbc5a8aa41f08d631eecf941d98db8bd3855e6e0758bff7ecc2eee5e4fd5be4"
